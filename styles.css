@@ -1,0 +1,7 @@
+/* =====================================================================
+   ACSIA TECHNOLOGIES — Design System entry point
+   Link this single file to pull in the whole system.
+   Tagline: "Technology that drives Tomorrow"
+   ===================================================================== */
+
+@import url("colors_and_type.css");

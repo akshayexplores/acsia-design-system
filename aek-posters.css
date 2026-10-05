@@ -1,0 +1,227 @@
+/* ====================================================================
+   AEK 2026 — LinkedIn posters · Acsia Technologies
+   Portrait 1080×1350. Near-monochrome blue, IBM Plex Sans.
+   ==================================================================== */
+
+.poster *,
+.poster *::before,
+.poster *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.poster {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: var(--midnight-900, #14243c);
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- photo + scrims ------------------------------------------------ */
+.poster-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.scrim { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+
+/* bottom-up gradient for content legibility */
+.scrim-bottom {
+  background:
+    linear-gradient(180deg, rgba(20,36,60,0) 34%, rgba(20,36,60,0.62) 64%, rgba(20,36,60,0.94) 100%);
+}
+.scrim-top {
+  background:
+    linear-gradient(180deg, rgba(20,36,60,0.78) 0%, rgba(20,36,60,0.30) 26%, rgba(20,36,60,0) 46%);
+}
+.scrim-full {
+  background:
+    linear-gradient(180deg, rgba(20,36,60,0.80) 0%, rgba(20,36,60,0.66) 48%, rgba(20,36,60,0.90) 100%),
+    radial-gradient(120% 80% at 50% 38%, rgba(54,171,255,0.16) 0%, rgba(54,171,255,0) 60%);
+}
+
+/* hairline frame, engineered feel */
+.poster-frame {
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(255,255,255,0.16);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ---- shared content ------------------------------------------------ */
+.poster-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  padding: 72px;
+}
+
+/* ---- logo lockup --------------------------------------------------- */
+.logo-img {
+  display: block;
+  height: 56px;
+  width: auto;
+}
+
+/* split panel: slightly larger lockup in the header band */
+.split-logo .logo-img { height: 58px; }
+
+/* ---- eyebrow ------------------------------------------------------- */
+.eyebrow {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--summer-sky, #36abff);
+}
+.eyebrow.muted { color: #cfe6fb; }
+
+/* ---- headline ------------------------------------------------------ */
+.poster .headline {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+  font-size: 104px;
+  text-wrap: balance;
+  color: #ffffff;
+}
+.poster .headline .accent { color: var(--summer-sky, #36abff); }
+
+.poster .subhead {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  font-size: 58px;
+  color: #fff;
+}
+
+/* ---- accent rule --------------------------------------------------- */
+.rule {
+  width: 96px;
+  height: 4px;
+  background: var(--summer-sky, #36abff);
+  border-radius: 999px;
+}
+
+/* ---- detail rows --------------------------------------------------- */
+.details { display: flex; flex-direction: column; gap: 10px; }
+.detail {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-size: 27px;
+  line-height: 1.25;
+  color: #eaf2fb;
+}
+.detail .k {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9fb6d2;
+  min-width: 92px;
+  flex-shrink: 0;
+}
+.detail strong { font-weight: 600; color: #fff; }
+
+/* ---- CTA ----------------------------------------------------------- */
+.cta-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--summer-sky, #36abff);
+  color: #08243f;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  padding: 19px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(54,171,255,0.35);
+}
+.btn .arrow { font-size: 26px; transform: translateY(1px); }
+.cta-email {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  color: #cfe0f2;
+}
+
+/* ---- tagline ------------------------------------------------------- */
+.tagline {
+  font-size: 22px;
+  letter-spacing: 0.005em;
+  color: #aebfd4;
+}
+.tagline b { color: #dfeaf6; font-weight: 600; }
+
+/* ---- anniversary chip --------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  padding: 9px 18px 9px 14px;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  color: #eaf2fb;
+  backdrop-filter: blur(4px);
+  background: rgba(20,36,60,0.28);
+}
+.chip b { color: var(--summer-sky, #36abff); font-weight: 700; }
+
+/* ---- Variation B: split panel ------------------------------------- */
+.split-photo { position: absolute; top: 0; left: 0; right: 0; height: 760px; }
+.split-panel {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 590px;
+  background: var(--midnight-blue, #1e3659);
+  z-index: 4;
+  padding: 60px 72px 64px;
+  display: flex;
+  flex-direction: column;
+}
+.split-panel::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 5px;
+  background: var(--summer-sky, #36abff);
+}
+.split-logo {
+  position: absolute;
+  top: 60px; left: 72px;
+  z-index: 4;
+}
+
+/* photo slots: dark base while the hero loads */
+.poster-photo { background: #16263d; }
+
+/* ---- AEK co-brand logo slot --------------------------------------- */
+.aek-logo { display: inline-flex; align-items: center; }
+.aek-logo-slot {
+  display: block;
+  width: 248px;
+  height: 70px;
+  background: rgba(255,255,255,0.06);
+}
+.aek-logo-slot::part(ring) { border-color: rgba(255,255,255,0.38); }
+.aek-logo-slot::part(empty) { color: rgba(233,242,251,0.82); }
+.aek-logo.light .aek-logo-slot { width: 300px; height: 88px; }
+
+.split-aek {
+  position: absolute;
+  top: 60px; right: 72px;
+  z-index: 4;
+}
