@@ -1,0 +1,6 @@
+# Confidential Acsia source material (brand manual, fact sheet, case-study decks). Never commit.
+uploads/
+*.pptx
+
+# OS junk
+.DS_Store
