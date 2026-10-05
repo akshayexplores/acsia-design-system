@@ -1,0 +1,42 @@
+<!-- @dsCard group="Brand" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .ig{ display:grid; grid-template-columns: repeat(8, 1fr); gap:10px; }
+  .ico{ display:flex; flex-direction:column; align-items:center; gap:7px; }
+  .ico .b{ width:100%; aspect-ratio:1; border-radius:12px; background:#fff; border:1px solid #e9ebef; display:flex; align-items:center; justify-content:center; color:#1e3659; }
+  .ico .b svg{ width:23px; height:23px; stroke-width:1.75; }
+  .ico span{ font-size:9px; color:#8d99ae; text-align:center; line-height:1.1; }
+  .note{ font-family:var(--font-mono); font-size:10px; color:#8d99ae; margin-top:12px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="ig">
+    <div class="ico"><div class="b"><i data-lucide="cpu"></i></div><span>AI</span></div>
+    <div class="ico"><div class="b"><i data-lucide="brain-circuit"></i></div><span>ML</span></div>
+    <div class="ico"><div class="b"><i data-lucide="car-front"></i></div><span>Connected</span></div>
+    <div class="ico"><div class="b"><i data-lucide="radio-tower"></i></div><span>Telematics</span></div>
+    <div class="ico"><div class="b"><i data-lucide="layout-dashboard"></i></div><span>Cockpit</span></div>
+    <div class="ico"><div class="b"><i data-lucide="battery-charging"></i></div><span>e-Mobility</span></div>
+    <div class="ico"><div class="b"><i data-lucide="shield-check"></i></div><span>Safety</span></div>
+    <div class="ico"><div class="b"><i data-lucide="lock-keyhole"></i></div><span>Security</span></div>
+    <div class="ico"><div class="b"><i data-lucide="cloud"></i></div><span>Cloud</span></div>
+    <div class="ico"><div class="b"><i data-lucide="git-branch"></i></div><span>CI/CD</span></div>
+    <div class="ico"><div class="b"><i data-lucide="database"></i></div><span>Big Data</span></div>
+    <div class="ico"><div class="b"><i data-lucide="gauge"></i></div><span>Perf</span></div>
+    <div class="ico"><div class="b"><i data-lucide="code-xml"></i></div><span>Embedded</span></div>
+    <div class="ico"><div class="b"><i data-lucide="badge-check"></i></div><span>QA</span></div>
+    <div class="ico"><div class="b"><i data-lucide="navigation"></i></div><span>Autonomy</span></div>
+    <div class="ico"><div class="b"><i data-lucide="map-pin"></i></div><span>Map</span></div>
+  </div>
+  <div class="note">Substitute: Lucide (line, 1.75 stroke) — replace with official Acsia icon set</div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

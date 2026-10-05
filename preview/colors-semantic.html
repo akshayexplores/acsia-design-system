@@ -1,0 +1,34 @@
+<!-- @dsCard group="Colors" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<style>
+  .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 8px 28px; }
+  .tok { display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid var(--border-soft); }
+  .chip { width:30px; height:30px; border-radius:7px; border:1px solid rgba(20,36,60,0.10); flex:none; }
+  .tok .nm { font-family:var(--font-mono); font-size:12px; color:var(--fg); }
+  .tok .vl { font-family:var(--font-mono); font-size:11px; color:var(--fg-muted); margin-left:auto; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid">
+    <div class="tok"><span class="chip" style="background:#36abff"></span><span class="nm">--brand</span><span class="vl">#36ABFF</span></div>
+    <div class="tok"><span class="chip" style="background:#1d8ee0"></span><span class="nm">--brand-strong</span><span class="vl">#1D8EE0</span></div>
+    <div class="tok"><span class="chip" style="background:#1e3659"></span><span class="nm">--brand-deep / --fg</span><span class="vl">#1E3659</span></div>
+    <div class="tok"><span class="chip" style="background:#ebf6ff"></span><span class="nm">--brand-wash</span><span class="vl">#EBF6FF</span></div>
+    <div class="tok"><span class="chip" style="background:#ffffff"></span><span class="nm">--bg / --surface</span><span class="vl">#FFFFFF</span></div>
+    <div class="tok"><span class="chip" style="background:#edede9"></span><span class="nm">--bg-muted</span><span class="vl">#EDEDE9</span></div>
+    <div class="tok"><span class="chip" style="background:#1e3659"></span><span class="nm">--bg-inverse</span><span class="vl">#1E3659</span></div>
+    <div class="tok"><span class="chip" style="background:#5b6575"></span><span class="nm">--fg-muted</span><span class="vl">#5B6575</span></div>
+    <div class="tok"><span class="chip" style="background:#d7dae0"></span><span class="nm">--border</span><span class="vl">#D7DAE0</span></div>
+    <div class="tok"><span class="chip" style="background:#1f9d6b"></span><span class="nm">--success</span><span class="vl">#1F9D6B</span></div>
+    <div class="tok"><span class="chip" style="background:#e8a33d"></span><span class="nm">--warning</span><span class="vl">#E8A33D</span></div>
+    <div class="tok"><span class="chip" style="background:#d9534f"></span><span class="nm">--danger</span><span class="vl">#D9534F</span></div>
+  </div>
+</div>
+</body>
+</html>

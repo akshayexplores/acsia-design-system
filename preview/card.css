@@ -1,0 +1,34 @@
+/* Shared framing for design-system preview cards.
+   Cards show specimens directly — no titles (asset name renders outside). */
+@import url("../colors_and_type.css");
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.card {
+  width: 700px;
+  padding: 22px 24px;
+  background: var(--bg);
+}
+.row { display: flex; gap: 12px; align-items: stretch; }
+.col { display: flex; flex-direction: column; }
+.swatch {
+  flex: 1;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(20,36,60,0.08);
+  padding: 12px;
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.swatch .name { font-size: 12.5px; font-weight: 600; letter-spacing: -0.01em; }
+.swatch .hex { font-family: var(--font-mono); font-size: 11px; opacity: 0.85; margin-top: 2px; }
+.muted { color: var(--fg-muted); }
+.label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-muted); }
