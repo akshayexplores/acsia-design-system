@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<style>
+  .tag{ font-size:12.5px; font-weight:500; padding:6px 13px; border-radius:999px; display:inline-flex; align-items:center; gap:6px; }
+  .solid{ background:#36abff; color:#fff; }
+  .soft{ background:#ebf6ff; color:#1d8ee0; }
+  .outline{ background:#fff; color:#1e3659; border:1.5px solid #d7dae0; }
+  .ink{ background:#1e3659; color:#fff; }
+  .sand{ background:#dad7cd; color:#1e3659; }
+  .dot{ width:7px; height:7px; border-radius:50%; }
+  .pillstat{ font-family:var(--font-mono); font-weight:500; font-size:12px; padding:5px 12px; border-radius:999px; display:inline-flex; align-items:center; gap:7px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row" style="flex-wrap:wrap;gap:10px">
+    <span class="tag solid">AUTOSAR</span>
+    <span class="tag soft">Android Automotive</span>
+    <span class="tag outline">Automotive Linux</span>
+    <span class="tag ink">QNX</span>
+    <span class="tag sand">AI / ML</span>
+    <span class="tag soft">Functional Safety</span>
+    <span class="tag outline">Cybersecurity</span>
+  </div>
+  <div class="row" style="flex-wrap:wrap;gap:10px;margin-top:14px">
+    <span class="pillstat" style="background:#eafaf3;color:#1f9d6b"><span class="dot" style="background:#1f9d6b"></span>Validated</span>
+    <span class="pillstat" style="background:#fdf4e6;color:#b9791f"><span class="dot" style="background:#e8a33d"></span>In review</span>
+    <span class="pillstat" style="background:#fdecec;color:#c0403c"><span class="dot" style="background:#d9534f"></span>Blocked</span>
+    <span class="pillstat" style="background:#ebf6ff;color:#1d8ee0"><span class="dot" style="background:#36abff"></span>OTA ready</span>
+  </div>
+</div>
+</body>
+</html>

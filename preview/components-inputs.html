@@ -1,0 +1,41 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<style>
+  .field{ display:flex; flex-direction:column; gap:6px; flex:1; }
+  .flabel{ font-size:12.5px; font-weight:600; color:#1e3659; }
+  .input{ font-family:var(--font-sans); font-size:14px; color:#1e3659; background:#fff; border:1.5px solid #d7dae0; border-radius:10px; padding:11px 13px; }
+  .input.focus{ border-color:#36abff; box-shadow:0 0 0 3px rgba(54,171,255,0.22); outline:none; }
+  .input.ph{ color:#8d99ae; }
+  .hint{ font-size:11.5px; color:#8d99ae; }
+  .check{ display:flex; align-items:center; gap:9px; font-size:14px; color:#1e3659; }
+  .cb{ width:20px; height:20px; border-radius:5px; background:#36abff; display:flex; align-items:center; justify-content:center; color:#fff; font-size:13px; }
+  .tg{ width:40px; height:23px; border-radius:999px; background:#36abff; position:relative; }
+  .tg::after{ content:""; position:absolute; width:17px; height:17px; border-radius:50%; background:#fff; top:3px; right:3px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row" style="gap:18px">
+    <div class="field">
+      <span class="flabel">Work email</span>
+      <input class="input ph" value="name@company.com">
+      <span class="hint">We'll never share your details.</span>
+    </div>
+    <div class="field">
+      <span class="flabel">Area of interest</span>
+      <input class="input focus" value="Digital Cockpit &amp; Displays">
+      <span class="hint" style="color:#36abff">Focused</span>
+    </div>
+  </div>
+  <div class="row" style="gap:22px;margin-top:16px;align-items:center">
+    <div class="check"><span class="cb">✓</span> Subscribe to ELECTRO newsletter</div>
+    <div class="check"><span class="tg"></span> Functional Safety mode</div>
+  </div>
+</div>
+</body>
+</html>

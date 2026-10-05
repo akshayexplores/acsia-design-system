@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body{ background:#f6f7f5; } .card{ background:#f6f7f5; }
+  .ccard{ flex:1; background:#fff; border:1px solid #e9ebef; border-radius:16px; padding:22px; box-shadow:0 6px 18px rgba(20,36,60,0.08); }
+  .ic{ width:46px; height:46px; border-radius:12px; background:#ebf6ff; display:flex; align-items:center; justify-content:center; color:#1d8ee0; margin-bottom:14px; }
+  .ic svg{ width:24px; height:24px; }
+  .ccard h3{ font-family:var(--font-display); font-size:18px; font-weight:600; color:#1e3659; margin:0 0 6px; }
+  .ccard p{ font-size:13.5px; line-height:1.55; color:#5b6575; margin:0; }
+  .more{ font-size:13px; font-weight:600; color:#36abff; margin-top:12px; display:inline-flex; align-items:center; gap:5px; }
+  .ccard.dark{ background:#1e3659; border-color:#28456e; box-shadow:0 10px 30px rgba(20,36,60,0.25); }
+  .ccard.dark .ic{ background:#28456e; color:#6cc1ec; }
+  .ccard.dark h3{ color:#fff; } .ccard.dark p{ color:#aeb9cb; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row" style="gap:14px">
+    <div class="ccard">
+      <div class="ic"><i data-lucide="layout-dashboard"></i></div>
+      <h3>Digital Cockpit &amp; Displays</h3>
+      <p>HMI, instrument clusters and infotainment that simplify the complex.</p>
+      <span class="more">Explore <i data-lucide="arrow-right" style="width:15px;height:15px"></i></span>
+    </div>
+    <div class="ccard">
+      <div class="ic"><i data-lucide="battery-charging"></i></div>
+      <h3>e-Mobility</h3>
+      <p>Software powering the safe, sustainable electric vehicles of tomorrow.</p>
+      <span class="more">Explore <i data-lucide="arrow-right" style="width:15px;height:15px"></i></span>
+    </div>
+    <div class="ccard dark">
+      <div class="ic"><i data-lucide="radio-tower"></i></div>
+      <h3>Telematics</h3>
+      <p>Connected-vehicle data and signal intelligence at fleet scale.</p>
+      <span class="more" style="color:#6cc1ec">Explore <i data-lucide="arrow-right" style="width:15px;height:15px"></i></span>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

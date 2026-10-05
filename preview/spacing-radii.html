@@ -1,0 +1,28 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<style>
+  .item { display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .box { width:84px; height:64px; background:#ebf6ff; border:1.5px solid #36abff; }
+  .cap { font-family:var(--font-mono); font-size:11px; color:#5b6575; }
+  .cap b { color:#1e3659; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label" style="margin-bottom:12px">Corner radii</div>
+  <div class="row" style="justify-content:space-between">
+    <div class="item"><div class="box" style="border-radius:4px"></div><div class="cap"><b>xs</b> 4</div></div>
+    <div class="item"><div class="box" style="border-radius:6px"></div><div class="cap"><b>sm</b> 6</div></div>
+    <div class="item"><div class="box" style="border-radius:10px"></div><div class="cap"><b>md</b> 10</div></div>
+    <div class="item"><div class="box" style="border-radius:16px"></div><div class="cap"><b>lg</b> 16</div></div>
+    <div class="item"><div class="box" style="border-radius:24px"></div><div class="cap"><b>xl</b> 24</div></div>
+    <div class="item"><div class="box" style="border-radius:999px"></div><div class="cap"><b>pill</b></div></div>
+  </div>
+</div>
+</body>
+</html>

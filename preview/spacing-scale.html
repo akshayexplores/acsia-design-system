@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<style>
+  .srow{ display:flex; align-items:center; gap:12px; padding:3px 0; }
+  .bar{ height:14px; background:#36abff; border-radius:3px; }
+  .tk{ font-family:var(--font-mono); font-size:11px; color:#1e3659; width:78px; }
+  .px{ font-family:var(--font-mono); font-size:11px; color:#8d99ae; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label" style="margin-bottom:10px">Spacing scale · 4px base grid</div>
+  <div class="srow"><span class="tk">--s-1</span><span class="bar" style="width:4px"></span><span class="px">4</span></div>
+  <div class="srow"><span class="tk">--s-2</span><span class="bar" style="width:8px"></span><span class="px">8</span></div>
+  <div class="srow"><span class="tk">--s-3</span><span class="bar" style="width:12px"></span><span class="px">12</span></div>
+  <div class="srow"><span class="tk">--s-4</span><span class="bar" style="width:16px"></span><span class="px">16</span></div>
+  <div class="srow"><span class="tk">--s-6</span><span class="bar" style="width:24px"></span><span class="px">24</span></div>
+  <div class="srow"><span class="tk">--s-8</span><span class="bar" style="width:32px"></span><span class="px">32</span></div>
+  <div class="srow"><span class="tk">--s-12</span><span class="bar" style="width:48px"></span><span class="px">48</span></div>
+  <div class="srow"><span class="tk">--s-16</span><span class="bar" style="width:64px"></span><span class="px">64 · section</span></div>
+  <div class="srow"><span class="tk">--s-24</span><span class="bar" style="width:96px"></span><span class="px">96 · section</span></div>
+</div>
+</body>
+</html>

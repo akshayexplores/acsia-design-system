@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="card.css">
+<style>
+  .btn{ font-family:var(--font-sans); font-weight:600; font-size:15px; border-radius:10px; padding:11px 22px; border:1.5px solid transparent; cursor:pointer; transition:all .15s ease; display:inline-flex; align-items:center; gap:8px; }
+  .primary{ background:#36abff; color:#fff; box-shadow:0 8px 20px rgba(54,171,255,0.30); }
+  .primary.hover{ background:#1d8ee0; }
+  .primary.press{ background:#1d8ee0; transform:translateY(1px) scale(.99); box-shadow:0 4px 12px rgba(54,171,255,0.28); }
+  .secondary{ background:#fff; color:#1e3659; border-color:#d7dae0; }
+  .secondary.hover{ background:#ebf6ff; border-color:#36abff; color:#1d8ee0; }
+  .ghost{ background:transparent; color:#1d8ee0; }
+  .ghost.hover{ background:#ebf6ff; }
+  .disabled{ background:#edede9; color:#8d99ae; box-shadow:none; cursor:not-allowed; }
+  .stk{ display:flex; flex-direction:column; gap:9px; align-items:flex-start; }
+  .cap{ font-family:var(--font-mono); font-size:10px; color:#8d99ae; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row" style="gap:14px;flex-wrap:wrap">
+    <div class="stk"><button class="btn primary">Get in touch</button><span class="cap">primary</span></div>
+    <div class="stk"><button class="btn primary hover">Get in touch</button><span class="cap">hover</span></div>
+    <div class="stk"><button class="btn primary press">Get in touch</button><span class="cap">pressed</span></div>
+    <div class="stk"><button class="btn secondary">Explore</button><span class="cap">secondary</span></div>
+    <div class="stk"><button class="btn secondary hover">Explore</button><span class="cap">hover</span></div>
+    <div class="stk"><button class="btn ghost">Read more →</button><span class="cap">ghost</span></div>
+    <div class="stk"><button class="btn disabled">Submit</button><span class="cap">disabled</span></div>
+  </div>
+</div>
+</body>
+</html>
