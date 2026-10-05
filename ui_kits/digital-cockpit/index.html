@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Digital Cockpit" name="Digital Cockpit UI Kit" subtitle="In-vehicle HMI — home, nav, media, climate, energy" viewport="1280x800" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acsia — Digital Cockpit UI Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font-family: var(--font-sans); background: #05080d;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 24px;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  /* In-vehicle display bezel */
+  .ivi {
+    width: 1280px; height: 800px; position: relative;
+    border-radius: 30px; padding: 16px;
+    background: linear-gradient(160deg,#11151c,#04070b);
+    box-shadow: 0 40px 120px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(108,193,236,0.08);
+  }
+  .screen {
+    width: 100%; height: 100%; border-radius: 18px; overflow: hidden;
+    background: radial-gradient(120% 100% at 70% 0%, #142a44 0%, #0b1626 55%, #081120 100%);
+    display: flex; flex-direction: column;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
+  }
+  .stage { flex: 1; padding: 6px 22px 0; min-height: 0; }
+  .scaler { transform-origin: top center; }
+</style>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="ivi" id="ivi">
+  <div class="screen">
+    <div id="statusbar"></div>
+    <div class="stage" id="stage"></div>
+    <div id="dock"></div>
+  </div>
+</div>
+<script type="text/babel" src="hmi-core.jsx"></script>
+<script type="text/babel" src="hmi-views.jsx"></script>
+<script type="text/babel">
+  const { useState } = React;
+  function Cockpit() {
+    const [view, setView] = useState("home");
+    const [media, setMedia] = useState({ playing: true, track: "Aurora", artist: "Solar Fields" });
+    const [climate, setClimate] = useState({ driver: 21.5, passenger: 22.0 });
+    const ev = { pct: 82, range: 412 };
+    const views = {
+      home: <HomeView go={setView} media={media} setMedia={setMedia} climate={climate} setClimate={setClimate} ev={ev} />,
+      nav: <NavView />,
+      media: <MediaView media={media} setMedia={setMedia} />,
+      climate: <ClimateView climate={climate} setClimate={setClimate} />,
+      ev: <EVView ev={ev} />,
+      phone: <SimpleView icon="phone" title="Phone" sub="Connect a device over Bluetooth to access contacts, recent calls and hands-free dialling." />,
+      settings: <SimpleView icon="settings" title="Vehicle Settings" sub="Displays, profiles, driver assistance, software updates and connectivity — all in one place." />,
+    };
+    return (
+      <React.Fragment>
+        {ReactDOM.createPortal(<StatusBar />, document.getElementById("statusbar"))}
+        {ReactDOM.createPortal(<Dock active={view} onChange={setView} />, document.getElementById("dock"))}
+        {views[view]}
+      </React.Fragment>
+    );
+  }
+  function mountAll() {
+    ReactDOM.createRoot(document.getElementById("stage")).render(<Cockpit />);
+  }
+  mountAll();
+
+  // Scale the 1280×800 bezel to fit the viewport
+  function fit() {
+    const ivi = document.getElementById("ivi");
+    const pad = 36;
+    const s = Math.min((window.innerWidth - pad) / 1280, (window.innerHeight - pad) / 800, 1);
+    ivi.style.transform = `scale(${s})`;
+  }
+  window.addEventListener("resize", fit); fit();
+</script>
+</body>
+</html>
